@@ -21,7 +21,7 @@ var mobilePrice = 100;
 var laptopPrice = 500;
 
 function budgetCalculator(watch, mobile, laptop) {
-    var watchQuantity, mobileQuantity, laptopQuantity, watchBudget, mobileBudget, laptopBudget, totalPrice;
+    var watchQuantity, mobileQuantity, laptopQuantity, watchBudget, mobileBudget, laptopBudget;
 
     watchQuantity = watch;
     mobileQuantity = mobile;
@@ -42,24 +42,34 @@ function budgetCalculator(watch, mobile, laptop) {
 var totalBudget = budgetCalculator(1, 10, 3);
 console.log(totalBudget);
 
+
 // Problem-3 : Hotel Cost //
 
 function hotelCost(stayDuration) {
-    var firstTenDays, secondTenDays, finalDays, hotelFeeFirstTenDays, hotelFeeSecondTenDays, hotelFeeFinalDays, totalDays;
-
-    totalDays = stayDuration;
-
-    if ((firstTenDays >= 1 && firstTenDays <= 10) && (secondTenDays >= 11 && secondTenDays <= 20) && (finalDays >= 21)) {
-
-        hotelFeeFirstTenDays = 100;
-        hotelFeeSecondTenDays = 80;
-        hotelFeeFinalDays = 50;
-    } else {
-        return ("Please input a valid number!")
-    }
-
-    return hotelBudget = hotelFeeFirstTenDays + hotelFeeSecondTenDays + hotelFeeFinalDays;
+    if (stayDuration >= 1 && stayDuration <= 10) {
+     return (100 * stayDuration);
+  }
+  else if (stayDuration >= 11 && stayDuration <= 20 ) {
+    
+      return ((stayDuration-10) * 80) + 1000;
+  }
+  else if (stayDuration >= 21) {
+     return ((stayDuration-20) * 50) + 1800;
+  }
+  else{
+      return ("Please input a valid number!")
+  }
 }
-
-var totalHotelFee = hotelCost(40);
+ 
+var totalHotelFee = hotelCost(22);
 console.log(totalHotelFee);
+
+
+// Problem-4 : Mega Friend
+
+myFriends = ["Akram", "Zaman", "Hasibullah", "Sajid", "Sanaullah"]
+
+myFriends.sort(function(a,b) {
+    return b.length - a.length; //sorting the array from higher to lower order//
+})
+console.log(myFriends[0]);
